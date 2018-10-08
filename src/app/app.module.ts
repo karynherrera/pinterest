@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainPinsContainerComponent } from './main-pins-container/main-pins-container.component';
-import { PublicacionesComponent } from './publicaciones/publicaciones.component';
-import { TagsComponent } from './tags/tags.component';
+import { PublicacionesComponent } from './main-pins-container/publicaciones/publicaciones.component';
+import { TagsComponent } from './main-pins-container/tags/tags.component';
 
 //Importaciones Material Angular
 import {MatToolbarModule} from '@angular/material/toolbar';
