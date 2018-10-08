@@ -1,6 +1,31 @@
 mat-card{
   position: relative;
   width: 16rem;
-  background-color: azure;
   margin:0.5%;
+  display:inline-block;
+  opacity: 1;
+  border:none;
+  border-style: hidden;
+  box-shadow:0px 0px 0px 0px !important;
+  padding-bottom: 1%;
+}
+
+mat-card:hover{
+  background-color: #EFEFEF;
+  border-radius: 8%;
+}
+
+img{
+  border-radius:4%;
+  margin-bottom: 0%;
+  border-left: 1%;
+  border-top: 1%;
+  border-right: 1%;
+}
+
+.item{
+  text-align: left;
+  display:inline-block;
+  padding: 0%;
+  
 }

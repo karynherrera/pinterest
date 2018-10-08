@@ -13,6 +13,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
+//servicio
+import { DataApiService } from './services/data-api.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule
     
   ],
-  providers: [],
+  providers: [DataApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
