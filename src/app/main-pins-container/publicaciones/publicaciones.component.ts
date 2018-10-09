@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { map } from 'rxjs/operators';
+import { ImgInterface } from '../../model/imgInterface';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class PublicacionesComponent implements OnInit {
   img:string;
   total:any;
   description:string;
-
+  pins: ImgInterface[];
 
   constructor(private dataApi:DataApiService) { }
 
@@ -21,13 +21,12 @@ export class PublicacionesComponent implements OnInit {
   }
 
   getImgsApi(){  
-    
-    this.dataApi.getImgs('cat').subscribe(imgs=>{
+      this.dataApi.getImgs('cat').subscribe(imgs=>{
       console.log(imgs);
       this.total = imgs.results[0].links.download;
       console.log(this.total);
       this.img = this.total;
       this.description = imgs.results[0].description;
-    } );
+    } ); 
   }
 }
