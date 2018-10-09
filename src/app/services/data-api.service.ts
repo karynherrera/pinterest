@@ -11,23 +11,30 @@ export class DataApiService {
   private APIKEY = environment.accesKey_unplash;
   private URLAPI = environment.endPoint_urlApiUnplash;
   private url = '&client_id='+ this.APIKEY;
-  pics: Observable<any>;
-  pic: Observable<any>;
+  
+  dataApiImgs=[];
+  resultsApi=[];
 
   constructor(private http:HttpClient) { }
 
   //extraemos datos de la Api
   getImgs(query: string){
+    let array: any[];
     //const urlApi= 'https://api.unsplash.com/search/photos?query=dog&client_id=1b09a891067cc7cef93d3161bfa754b0bac778388c2d19065091a74d0093ca4c';
     const urlApi= this.URLAPI + query + this.url;
-    //this.pic = this.http.get(urlApi)
-    /*
-    this.pic.pipe(map(res => {
-      console.log('res');
-      console.log(res);
-    })); */
     return this.http.get(urlApi)
-    //.pipe(map(res => res.json()))
-    
+    /*.subscribe((data:any[])=> {
+      //console.log(data);
+      this.dataApiImgs.push(data);
+      //console.log(this.dataApiImgs);
+      this.dataApiImgs.forEach((element)=>{
+        this.resultsApi = element.results;
+        //console.log(this.resultsApi);
+        this.resultsApi.forEach((pin)=>{
+          console.log(pin);
+        })
+      })
+    });
+    */
   }
 }
