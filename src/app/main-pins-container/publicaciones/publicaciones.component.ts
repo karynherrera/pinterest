@@ -16,7 +16,7 @@ export class PublicacionesComponent implements OnInit {
   }
 
   getImgsApi(){
-    this.dataApi.getImgs().subscribe((imgs)=>console.log(imgs));
+    this.dataApi.getImgs('cat').subscribe((imgs)=>console.log(imgs));
   }
 
 }

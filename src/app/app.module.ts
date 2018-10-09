@@ -15,7 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 
 //servicio
 import { DataApiService } from './services/data-api.service';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
