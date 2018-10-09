@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ImgInterface } from '../model/imgInterface';
+import { DataApiService } from '../services/data-api.service';
 
 @Component({
   selector: 'app-main-pins-container',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-pins-container.component.css']
 })
 export class MainPinsContainerComponent implements OnInit {
-
-  constructor() { }
+pines: ImgInterface[];
+  constructor(private picService:DataApiService) { }
 
   ngOnInit() {
   }

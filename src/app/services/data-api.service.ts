@@ -14,7 +14,8 @@ export class DataApiService {
   
   dataApiImgs=[];
   resultsApi=[];
-
+  getPins=[];
+  pines=[];
   constructor(private http:HttpClient) { }
 
   //extraemos datos de la Api
@@ -22,7 +23,29 @@ export class DataApiService {
     let array: any[];
     //const urlApi= 'https://api.unsplash.com/search/photos?query=dog&client_id=1b09a891067cc7cef93d3161bfa754b0bac778388c2d19065091a74d0093ca4c';
     const urlApi= this.URLAPI + query + this.url;
-    return this.http.get(urlApi)
+    this.http.get(urlApi).subscribe((data:any[])=> {
+      //console.log(data);
+      this.dataApiImgs.push(data);
+      //console.log(this.dataApiImgs);
+      this.dataApiImgs.forEach((element)=>{
+        this.resultsApi = element.results;
+        //console.log(this.resultsApi);
+        
+        this.resultsApi.forEach((pin)=>{
+          //console.log(pin);
+          this.getPins.push({
+            'id':pin.id,
+            'img':pin.urls.small,
+            'description': pin.description,
+          })
+        
+         // this.pins.id = pin.id;
+         // this.pins.img= pin.links.download;
+         // this.pins.description=pin.description;
+        })
+      })
+      
+    });
     /*.subscribe((data:any[])=> {
       //console.log(data);
       this.dataApiImgs.push(data);
@@ -36,5 +59,6 @@ export class DataApiService {
       })
     });
     */
+   return this.pines = this.getPins;
   }
 }
