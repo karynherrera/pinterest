@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataApiService } from '../../services/data-api.service';
+
 
 @Component({
   selector: 'app-publicaciones',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi:DataApiService) { }
 
   ngOnInit() {
+    this.getImgsApi();
+  }
+
+  getImgsApi(){
+    this.dataApi.getImgs().subscribe((imgs)=>console.log(imgs));
   }
 
 }

@@ -15,7 +15,8 @@ import {MatCardModule} from '@angular/material/card';
 
 //servicio
 import { DataApiService } from './services/data-api.service';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { DataApiService } from './services/data-api.service';
     TagsComponent
   ],
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     MatToolbarModule,
     MatFormFieldModule,
