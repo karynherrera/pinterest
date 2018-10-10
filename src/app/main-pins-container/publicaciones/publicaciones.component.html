@@ -1,6 +1,6 @@
 
-    <mat-card  *ngFor="let pic of pins">
-        <img mat-card-image src="{{pic.img}}">
+<mat-card  *ngFor="let pic of pins">
+<img mat-card-image (click)="openModal(pic.id)" src="{{pic.img}}">
     <mat-card-content>
       <div class="row">
           <div class="col item">{{pic.description}}</div>

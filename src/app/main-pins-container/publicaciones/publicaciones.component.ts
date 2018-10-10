@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
+import {MatDialog, MatDialogModule} from '@angular/material';
+import { ModalComponent } from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-publicaciones',
@@ -15,7 +18,10 @@ export class PublicacionesComponent implements OnInit {
   dataApiImgs=[];
   resultsApi=[];
   query='parakeet';
-  constructor(private dataApi:DataApiService) { }
+  
+  name;
+  animal;
+  constructor(private dataApi:DataApiService, public matDialog: MatDialogModule, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getImgsApi(this.query);
@@ -47,4 +53,26 @@ export class PublicacionesComponent implements OnInit {
     }); */
     //console.log(this.pins);
   }
+
+  openModal(id) {
+    let refPins=[];
+    this.pins.forEach((element)=>{
+        if(element.id === id){
+          let dialogRef = this.dialog.open(ModalComponent, {
+            height: '500px',
+            width: '600px', 
+            data: { 
+              img: element.img,
+               description:element.description},
+            //urlPhoto: 'hola'
+          });
+      
+          dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+          });
+          
+        }
+    })
+    
+}
 }

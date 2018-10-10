@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MainPinsContainerComponent } from './main-pins-container/main-pins-container.component';
 import { PublicacionesComponent } from './main-pins-container/publicaciones/publicaciones.component';
 import { TagsComponent } from './main-pins-container/tags/tags.component';
+import { ModalComponent } from './main-pins-container/modal/modal.component';
 
 //Importaciones Material Angular
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -12,18 +14,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 
 //servicio
 import { DataApiService } from './services/data-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MainPinsContainerComponent,
     PublicacionesComponent,
-    TagsComponent
+    TagsComponent,
+    ModalComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,8 +38,13 @@ import { HttpModule } from '@angular/http';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
     
+    BrowserAnimationsModule,
+  ],
+  entryComponents:[
+    ModalComponent
   ],
   providers: [DataApiService],
   bootstrap: [AppComponent]
