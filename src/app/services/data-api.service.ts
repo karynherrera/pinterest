@@ -44,7 +44,7 @@ export class DataApiService {
           })
           pin.tags.forEach(element => {
             i++;
-            if(i<=8){
+            if(i<=10){
               this.tags.push({
                 'tags':element.title,
               })
@@ -79,7 +79,14 @@ export class DataApiService {
    return this.pines = this.getPins;
   }
   getTags(){
-
-    return this.getTgs;
+    return this.tags;
+  }
+  clear(){
+    this.dataApiImgs=[];
+    this.resultsApi=[];
+    this.getPins=[];
+    this.pines=[];
+    this.getTgs=[];
+    this.tags=[];
   }
 }

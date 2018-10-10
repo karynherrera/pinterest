@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
 
-
-
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.component.html',
@@ -16,15 +14,15 @@ export class PublicacionesComponent implements OnInit {
   pins=[];
   dataApiImgs=[];
   resultsApi=[];
-
+  query='parakeet';
   constructor(private dataApi:DataApiService) { }
 
   ngOnInit() {
-    this.getImgsApi();
+    this.getImgsApi(this.query);
   }
 
-  getImgsApi(){
-   this.pins =this.dataApi.getImgs('cat')
+  getImgsApi(query){
+   this.pins =this.dataApi.getImgs(query)
     /*.subscribe((data:any[])=> {
       //console.log(data);
       this.dataApiImgs.push(data);

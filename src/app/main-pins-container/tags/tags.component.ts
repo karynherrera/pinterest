@@ -18,11 +18,16 @@ array=[];
    }
 
   ngOnInit() {
-    this.pinesData = this.dataApi.getImgs('trading')
+    //this.pinesData = this.dataApi.getImgs('trading')
     this.tags = this.dataApi.getTags();
-    
     //console.log(this.tags);
     console.log(this.tags);
+  }
+
+  clickBtn(tag){
+    this.pinesData = this.dataApi.getImgs(tag)
+    this.dataApi.clear();
+    this.tags = this.dataApi.getTags();
   }
 
 }
