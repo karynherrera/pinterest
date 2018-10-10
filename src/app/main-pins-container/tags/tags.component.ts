@@ -7,6 +7,8 @@ import { DataApiService } from '../../services/data-api.service';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
+cont: Boolean=false;
+
 tags=[];
 pinesData=[];
 array=[];

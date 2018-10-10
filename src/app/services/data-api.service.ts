@@ -24,6 +24,7 @@ export class DataApiService {
   //extraemos datos de la Api
   getImgs(query: string){
     let array: any[];
+    let i=0;
     //const urlApi= 'https://api.unsplash.com/search/photos?query=dog&client_id=1b09a891067cc7cef93d3161bfa754b0bac778388c2d19065091a74d0093ca4c';
     const urlApi= this.URLAPI + query + this.url;
     this.http.get(urlApi).subscribe((data:any[])=> {
@@ -42,10 +43,14 @@ export class DataApiService {
             'description': pin.description,
           })
           pin.tags.forEach(element => {
+            i++;
+            if(i<=8){
+              this.tags.push({
+                'tags':element.title,
+              })
+            }
             //console.log(element.title);
-            this.tags.push({
-              'tags':element.title,
-            })
+            
           });
           
          // this.pins.id = pin.id;
