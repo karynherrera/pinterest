@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-tags',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
+tags=[];
+pinesData=[];
+array=[];
 
-  constructor() { }
+  constructor(private dataApi:DataApiService) {
+
+   }
 
   ngOnInit() {
+    this.pinesData = this.dataApi.getImgs('trading')
+    this.tags = this.dataApi.getTags();
+    
+    //console.log(this.tags);
+    console.log(this.tags);
   }
 
 }

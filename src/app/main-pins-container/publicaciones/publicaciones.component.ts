@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { ImgInterface } from '../../model/imgInterface';
+
 
 
 @Component({

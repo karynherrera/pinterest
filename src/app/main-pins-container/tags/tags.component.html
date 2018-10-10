@@ -1,3 +1,6 @@
-<mat-toolbar class='tags'>
-    <button mat-button type="submit">Tag</button>
-</mat-toolbar>
+<div *ngFor="let tag of tags">
+    <mat-toolbar class='tags'>
+        <button mat-button type="submit">{{tag.tags}}</button>
+    </mat-toolbar>
+</div>
+

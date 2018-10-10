@@ -16,6 +16,9 @@ export class DataApiService {
   resultsApi=[];
   getPins=[];
   pines=[];
+  getTgs=[];
+  tags=[];
+
   constructor(private http:HttpClient) { }
 
   //extraemos datos de la Api
@@ -38,7 +41,13 @@ export class DataApiService {
             'img':pin.urls.small,
             'description': pin.description,
           })
-        
+          pin.tags.forEach(element => {
+            //console.log(element.title);
+            this.tags.push({
+              'tags':element.title,
+            })
+          });
+          
          // this.pins.id = pin.id;
          // this.pins.img= pin.links.download;
          // this.pins.description=pin.description;
@@ -59,6 +68,13 @@ export class DataApiService {
       })
     });
     */
+   //console.log(this.getPins);
+   this.getTgs = this.tags;
+   //console.log(this.tags);
    return this.pines = this.getPins;
+  }
+  getTags(){
+
+    return this.getTgs;
   }
 }
