@@ -1,27 +1,23 @@
-# Pinterest
+#  :gift: Desafío Silicon Valley: Replica de Pinterest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+Dado un conjunto de urls de imagen (elige el banco de imagenes que más te guste), recrea el diseño de página de Pinterest.
 
-## Development server
+_Requisitos:_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+● El diseño es sólo versión desktop.
 
-## Code scaffolding
+● Debe usarse algún framework de JS.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+● La diagramación debe ser fluida, sin respetar columnas, simulando el mismo comportamiento despliegue de las imágenes de Pinterest.
 
-## Build
+● Al hacer click en la imagen se debe desplegar un modal con el diseño entregado, tal como sucede en Pinterest.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+##  :computer: Implementación  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para implementar la solución del desafío repliqué el muro de pinterest utilizando la Api Rest de Unplash. El desarrollo y diseño es en Angular 6.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+_Link directo al demo_
+[Replica Pinterest](https://karynherrera.github.io/pinterest/)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
