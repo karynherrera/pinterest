@@ -58,11 +58,12 @@ export class PublicacionesComponent implements OnInit {
     let refPins=[];
     this.pins.forEach((element)=>{
         if(element.id === id){
+          console.log(element);
           let dialogRef = this.dialog.open(ModalComponent, {
             height: '500px',
             width: '600px', 
             data: { 
-              img: element.img,
+               img: element.img,
                description:element.description},
             //urlPhoto: 'hola'
           });

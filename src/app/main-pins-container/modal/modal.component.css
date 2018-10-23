@@ -1,0 +1,20 @@
+.insideModal{
+  text-align: center;
+  position: relative;
+}
+.fa-pinterest{
+  color:#BD081C;
+  font-size: 30px;
+}
+button{
+  position: absolute;
+  background-color: #BD081C;
+  color: white;
+  border: none;
+  width: 30%;
+  margin-left: 10%;
+  padding: 1.5%;
+  border-radius: 6px;
+  top: 110%;
+ left:25%;
+}
