@@ -12,12 +12,12 @@ import { ModalComponent } from '../modal/modal.component';
 export class PublicacionesComponent implements OnInit {
   img:string;
   total:any;
-
+  
   description:string;
   pins=[];
   dataApiImgs=[];
   resultsApi=[];
-  query='parakeet';
+  query='all';
   
   name;
   animal;
@@ -25,6 +25,7 @@ export class PublicacionesComponent implements OnInit {
 
   ngOnInit() {
     this.getImgsApi(this.query);
+    //console.log(this.tags);
   }
 
   getImgsApi(query){

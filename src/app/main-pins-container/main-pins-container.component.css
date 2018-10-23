@@ -35,7 +35,7 @@ input[placeholder] {
   width: 80%;
 }
 
-.mat-button{
+.btnFixed{
   background-color:#F5F5F5;
   font-size: 16px;
   font-weight: bold;
@@ -43,7 +43,7 @@ input[placeholder] {
   border-radius: 20px;
 }
 
-.mat-button:hover{
+.btnFixed:hover{
   border-radius: 20px;
 }
 
