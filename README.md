@@ -1,23 +1,4 @@
-#  :gift: Desafío Silicon Valley: Replica de Pinterest
+#  :gift:Pinterest
 
-Dado un conjunto de urls de imagen (elige el banco de imagenes que más te guste), recrea el diseño de página de Pinterest.
-
-_Requisitos:_
-
-● El diseño es sólo versión desktop.
-
-● Debe usarse algún framework de JS.
-
-● La diagramación debe ser fluida, sin respetar columnas, simulando el mismo comportamiento despliegue de las imágenes de Pinterest.
-
-● Al hacer click en la imagen se debe desplegar un modal con el diseño entregado, tal como sucede en Pinterest.
-
-
-##  :computer: Implementación  
-
-Para implementar la solución del desafío repliqué el muro de pinterest utilizando la Api Rest de Unplash. El desarrollo y diseño es en Angular 6.
-
-
-_Link directo al demo_
-[Replica Pinterest](https://karynherrera.github.io/pinterest/)
+Desarrollo de una replica de Pinterest Desktop con funcionalidad básica utilizando la Api Rest de Unplash como banco de imagenes. La web tal como en pinterest puede recibir una consulta en la barra de busqueda y traera todas las imagenes que concuerden, o tambien se puede clickatr en los tags y mostrará las imagenes relacionadas. Al clickar en una imagen se muestra esta, con los detalles de la fotografia.
 
