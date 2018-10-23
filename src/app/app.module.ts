@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainPinsContainerComponent } from './main-pins-container/main-pins-container.component';
@@ -40,7 +41,7 @@ import { HttpModule } from '@angular/http';
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
-    
+    ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
   entryComponents:[

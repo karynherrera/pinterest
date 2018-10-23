@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataApiService } from '../../services/data-api.service';
 import {MatDialog, MatDialogModule} from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
@@ -17,15 +18,29 @@ export class PublicacionesComponent implements OnInit {
   pins=[];
   dataApiImgs=[];
   resultsApi=[];
-  query='all';
+  query='every';
   
   name;
   animal;
-  constructor(private dataApi:DataApiService, public matDialog: MatDialogModule, public dialog: MatDialog) { }
+  constructor(private formBuilder: FormBuilder, private dataApi:DataApiService, public matDialog: MatDialogModule, public dialog: MatDialog) { }
+  @Input() data;
+
 
   ngOnInit() {
     this.getImgsApi(this.query);
     //console.log(this.tags);
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log('envio');
+    if(changes.data.firstChange===false){
+      this.query = changes.data.currentValue;
+      console.log('this query '+this.query);
+      this.dataApi.clear();
+      this.getImgsApi(this.query);
+    }
+    //console.log(changes.data.currentValue);
+    
   }
 
   getImgsApi(query){
@@ -53,6 +68,11 @@ export class PublicacionesComponent implements OnInit {
       })
     }); */
     //console.log(this.pins);
+  }
+
+  public saveQuery(querys: FormGroup): void { 
+    console.log('publicaciones '+querys);
+
   }
 
   openModal(id) {
