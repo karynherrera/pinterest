@@ -5,7 +5,7 @@
     </div>
     <div class="col-8">
         <form  [formGroup]="queryForm" 
-        (ngSubmit)="saveQuery()" class="form-inline search-header my-2 my-lg-0 mx-3">
+        (ngSubmit)="saveQuery($event)" class="form-inline search-header my-2 my-lg-0 mx-3">
             <span id="search-btn" class="search-icon-header px-3">
               <i class="fas fa-search"></i>
               <input #search  formControlName="query" id="inputSearch"  class="form-control searchBox mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -21,8 +21,8 @@
     </div>
   </mat-toolbar>
   <div class="tags">
-    <app-tags class="row"></app-tags>
+    <app-tags (onTagChoose)="clickBtn($event)" class="row" [inputTag]="inputToTag"></app-tags>
   </div>
-        <app-publicaciones [data]="inputToChild" class="masonry masonry-brick
+        <app-publicaciones [data]="inputToSearch" class="masonry masonry-brick
         "></app-publicaciones> 
 </body> 

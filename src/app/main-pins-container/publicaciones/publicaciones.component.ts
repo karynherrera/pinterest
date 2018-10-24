@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { DataApiService } from '../../services/data-api.service';
 import {MatDialog, MatDialogModule} from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
@@ -19,7 +19,7 @@ export class PublicacionesComponent implements OnInit {
   dataApiImgs=[];
   resultsApi=[];
   query='every';
-  
+  tags=[];
   name;
   animal;
   constructor(private formBuilder: FormBuilder, private dataApi:DataApiService, public matDialog: MatDialogModule, public dialog: MatDialog) { }
@@ -70,10 +70,7 @@ export class PublicacionesComponent implements OnInit {
     //console.log(this.pins);
   }
 
-  public saveQuery(querys: FormGroup): void { 
-    console.log('publicaciones '+querys);
-
-  }
+  
 
   openModal(id) {
     let refPins=[];

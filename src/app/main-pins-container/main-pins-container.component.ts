@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DataApiService } from '../services/data-api.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-main-pins-container',
@@ -8,11 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./main-pins-container.component.css']
 })
 export class MainPinsContainerComponent implements OnInit {
-  @Output() queryFind: EventEmitter<any> = new EventEmitter<any>(); 
 
-public inputToChild: String;
+public inputToSearch: String;
+public inputToTag: String;
 pines=[];
 queryForm: FormGroup;
+onTagChoose;
 
   constructor(private formBuilder: FormBuilder,private picService:DataApiService) { 
     this.createForm(); 
@@ -27,13 +28,18 @@ queryForm: FormGroup;
     })
   }
 
-  sendQuery(query){
-
-  }
   public saveQuery(querys: FormGroup): void { 
     let query = this.queryForm.value.query;
-    console.log(query);
-    this.inputToChild = query;
+    //console.log(query);
+    this.inputToSearch = query;
     this.queryForm.reset();
   } 
+
+  public clickBtn(choosenTag: string):void { 
+    //console.log('Tag: ', choosenTag); 
+    this.inputToTag = choosenTag;
+    //console.log(this.inputToTag);
+    this.inputToSearch = choosenTag;
+    this.queryForm.reset();
+  }
 }

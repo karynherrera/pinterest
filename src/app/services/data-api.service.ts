@@ -42,16 +42,22 @@ export class DataApiService {
             'img':pin.urls.small,
             'description': pin.description,
           })
-          pin.tags.forEach(element => {
-            i++;
-            if(i<=10){
-              this.tags.push({
-                'tags':element.title,
-              })
-            }
-            //console.log(element.title);
-            
-          });
+          if(this.tags.length>10){
+            this.tags=[];
+          }
+          else{
+            pin.tags.forEach(element => {
+              i++;
+              if(i<=10){
+                this.tags.push({
+                  'tags':element.title,
+                })
+              }
+              //console.log(element.title);
+              
+            });
+          }
+          
           
          // this.pins.id = pin.id;
          // this.pins.img= pin.links.download;
@@ -75,10 +81,15 @@ export class DataApiService {
     */
    //console.log(this.getPins);
    this.getTgs = this.tags;
+   //console.log('dentro de getimg tgs');
+   //console.log(this.getTgs);
+   //console.log('dentro de getimg tags');
    //console.log(this.tags);
    return this.pines = this.getPins;
   }
   getTags(){
+    console.log('dentro de gettags ');
+    console.log(this.getTgs);
     return this.tags;
   }
   clear(){
